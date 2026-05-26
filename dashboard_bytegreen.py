@@ -13,7 +13,7 @@ st.write("Monitoramento de infra e calculo de energia")
 # carregando dados com cache pro streamlit
 @st.cache_data
 def carrega_dados():
-    df = pd.read_csv('dataset_bytegreen_mini.csv')
+    df = pd.read_csv('dataset_bytegreen_limpo.csv')
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     df = df.sort_values('timestamp')
     df['consumo_acumulado_watts'] = df['power_consumption'].cumsum()
